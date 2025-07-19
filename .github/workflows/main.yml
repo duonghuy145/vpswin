@@ -1,0 +1,13 @@
+name: Windows VPS Free RDP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Setup VPS
+      run: |
+        iex ((New-Object System.Net.WebClient).DownloadString('https://gitlab.com/biplobsd/windows-cloud-rdp/-/raw/main/Installer.ps1'))
